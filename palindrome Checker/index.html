@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Made with Thimble</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <center>
+  <input type = "text" placeholder="string" id ='a'>
+    <button onClick="palindrome()" id="en" >Check</button> 
+     
+    <h1 id="z"></h1>
+    </center>
+    <script>
+      var inp = document.getElementById('a')
+      inp.addEventListener('keyup', keycheck)
+      
+      function keycheck(e)
+      {
+        if(e.keyCode == 13)
+          {
+            palindrome()
+          }
+      }
+    function palindrome(str) {
+      var str = inp.value
+      var h1 = document.getElementById("z")
+    str = str.toLowerCase()
+    var a = str.split("")
+    a = a.filter(x => x.match(/[a-z]|\d/))
+    console.log(a) 
+    for(var i = 0; i < a.length; i++)
+        {   
+         if(a[i] != a[a.length-1-i])
+      {
+     
+        h1.innerHTML = "False"
+        return 
+     }
+      }
+                                // Good luck!
+     
+      h1.innerHTML = "True"
+      return
+   }
+
+
+
+    </script>
+    
+  </body>
+</html>
